@@ -1,0 +1,10 @@
+div{
+    text-align: center;
+    padding: 20px;
+    width: 400px;
+}
+
+.div-bg-crimson{
+    background-color: #dab4bc;
+    border: 5px outset crimson;
+}
