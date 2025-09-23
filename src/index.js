@@ -5,13 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import CommentList from "./chp05/CommentList";
 import Notification from "./chp06/Notification";
 import Counter from "./chp07/exam01/Counter";
+import Accomodate from "./chp07/Accomodate";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <Counter/>
+            <Accomodate/>
         </React.StrictMode>
     );
 }, 1000)
