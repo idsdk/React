@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import CommentList from "./chp05/CommentList";
+import Notification from "./chp06/Notification";
+import Counter from "./chp07/exam01/Counter";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <CommentList/>
+            <Counter/>
         </React.StrictMode>
     );
 }, 1000)
