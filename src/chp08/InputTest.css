@@ -1,0 +1,16 @@
+.background {
+    margin: 8px;
+    padding: 8px;
+    border: 3px crimson solid;
+    background-color: #2a593f;
+}
+
+.h3-color {
+    font-size: 20px;
+    color: crimson;
+}
+
+.h2-color {
+    font-size: 16px;
+    color: cyan;
+}
