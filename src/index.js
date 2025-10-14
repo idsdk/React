@@ -6,6 +6,8 @@ import Toggle from "./chp08/Toggle";
 import MyButton_Argument from "./chp08/MyButton_Argument";
 import InputTest from "./chp08/InputTest";
 import ConfirmButtonFunction from "./chp08/ConfirmButtonFunction";
+import Greeting from "./chp09/ex1/Greeting";
+import LandingPage from "./chp09/closing_ex/LandingPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <ConfirmButtonFunction/>
+            <LandingPage/>
         </React.StrictMode>
     );
 }, 1000)
