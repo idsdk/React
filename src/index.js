@@ -2,12 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Toggle from "./chp08/Toggle";
-import MyButton_Argument from "./chp08/MyButton_Argument";
-import InputTest from "./chp08/InputTest";
-import ConfirmButtonFunction from "./chp08/ConfirmButtonFunction";
-import Greeting from "./chp09/ex1/Greeting";
-import LandingPage from "./chp09/closing_ex/LandingPage";
+import AttendanceCard from "./chp10/AttendanceCard";
+import Naruto from "./chp10/Naruto";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <LandingPage/>
+            <Naruto/>
         </React.StrictMode>
     );
 }, 1000)
