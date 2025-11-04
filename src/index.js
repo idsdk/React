@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import AttendanceCard from "./chp10/AttendanceCard";
 import Naruto from "./chp10/Naruto";
+import NameForm from "./chp11/ex1/NameForm";
+import FruitSelect from "./chp11/ex2/FruitSelect";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <Naruto/>
+            <NameForm/>
         </React.StrictMode>
     );
 }, 1000)
