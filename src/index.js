@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Naruto from "./chp10/Naruto";
-import NameForm from "./chp11/ex1/NameForm";
-import FruitSelect from "./chp11/ex2/FruitSelect";
+import ConfirmBoilVerdict from "./chp12/ConfirmBoilVerdict";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <NameForm/>
+            <ConfirmBoilVerdict/>
         </React.StrictMode>
     );
 }, 1000)

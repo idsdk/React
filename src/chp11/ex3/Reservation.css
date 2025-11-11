@@ -1,0 +1,82 @@
+/* 전체 배경 */
+.reservation-container {
+    height: 100vh;
+    width: 100%;
+    background-image: url("./imgs/ResBackgroundImage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", "맑은 고딕", sans-serif;
+}
+
+/* 폼 박스 스타일 */
+.reservation-form {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* 라벨 그룹 */
+.form-group {
+    background: linear-gradient(135deg, #ffe259, #ffa751);
+    border-radius: 15px;
+    margin: 1rem 0;
+    padding: 1rem;
+    color: #333;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(255, 165, 81, 0.3);
+    transition: all 0.3s ease;
+}
+
+.form-group:hover {
+    transform: scale(1.02);
+}
+
+/* input 스타일 */
+input[type="checkbox"],
+input[type="number"] {
+    margin-left: 10px;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+input[type="number"] {
+    width: 60px;
+    text-align: center;
+}
+
+/* 버튼 */
+button {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    transform: scale(1.05);
+}
