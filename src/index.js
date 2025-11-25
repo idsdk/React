@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import DistanceInput from "./chp12/ex2/DistanceInput";
-import DistanceConverter from "./chp12/ex2/DistanceConverter";
+import Calculator from "./chp12/ex3/Calculator";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <DistanceConverter/>
+            <Calculator/>
         </React.StrictMode>
     );
 }, 1000)

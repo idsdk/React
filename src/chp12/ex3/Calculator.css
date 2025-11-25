@@ -1,0 +1,316 @@
+/* Calculator.css - Bubble boil background inside component */
+
+:root{
+    --hot1: #ff3b3b;
+    --hot2: #ff7a00;
+    --glass: rgba(255,255,255,0.12);
+    --accent: #ffbd59;
+}
+
+/* 기본 리셋(컴포넌트 내부에서 100vh 느낌을 내려면 아래가 유용) */
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 최상단 래퍼: 컴포넌트 내부에 배경을 만듦 */
+.calculator-bg {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* 화면 전체 높이 차지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--hot1), var(--hot2));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* 약간의 유리 질감 컨테이너(입력 UI) */
+.calculator-container {
+    position: relative;
+    z-index: 10;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+/* 제목(옵션) */
+.calculator-container h1{
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+/* 입력 스타일 */
+.calculator-row {
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom: 10px;
+}
+input[type="text"] {
+    padding: 12px 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.08);
+    outline: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+input[type="text"]:focus{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,93,0,0.12);
+    border-color: var(--accent);
+}
+
+/* 물 끓음 문구 */
+.boil-text {
+    margin-top: 14px;
+    font-weight: 600;
+    text-align:center;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    animation: verdictPulse 1.6s ease-in-out infinite;
+}
+
+/* 배경: 올라오는 기포(원형) */
+.bubble {
+    position: absolute;
+    bottom: -120px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.25) 40%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.02) 100%);
+    opacity: 0.85;
+    filter: blur(0.2px);
+    animation: bubbleRise linear infinite;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18), inset 0 -6px 10px rgba(255,255,255,0.06);
+}
+
+/* 여러 기포 위치/속도/크기 다르게 */
+.bubble.b1 { left: 10%; width: 18px; height:18px; animation-duration: 6s; animation-delay: 0s; }
+.bubble.b2 { left: 24%; width: 28px; height:28px; animation-duration: 7.2s; animation-delay: 0.8s; }
+.bubble.b3 { left: 38%; width: 14px; height:14px; animation-duration: 5.2s; animation-delay: 0.4s; opacity:0.9; }
+.bubble.b4 { left: 53%; width: 36px; height:36px; animation-duration: 8.4s; animation-delay: 1.2s; opacity:0.75; }
+.bubble.b5 { left: 68%; width: 22px; height:22px; animation-duration: 6.8s; animation-delay: 0.2s; }
+.bubble.b6 { left: 82%; width: 26px; height:26px; animation-duration: 7.6s; animation-delay: 0.6s; }
+
+/* 기포 이동 키프레임 */
+@keyframes bubbleRise {
+    0% {
+        transform: translateY(0) scale(0.9);
+        opacity: 0.85;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-130vh) scale(1.1) rotate(8deg);
+        opacity: 0;
+    }
+}
+
+/* 배경 그라디언트 천천히 변화 */
+@keyframes gradientShift {
+    0% { background-position: 0% 40%; }
+    50% { background-position: 100% 60%; }
+    100% { background-position: 0% 40%; }
+}
+
+/* Boil 텍스트 맥동 */
+@keyframes verdictPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 선택적: 작은 불꽃 반짝임 (포인트) */
+.heat-spark {
+    position: absolute;
+    top: 6%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), rgba(255,123,0,0.06) 30%, transparent 60%);
+    filter: blur(18px);
+    z-index: 2;
+    animation: sparkPulse 3.6s ease-in-out infinite;
+}
+@keyframes sparkPulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* 반응형 */
+@media (max-width:420px){
+    .calculator-container { width: 92%; padding: 18px; border-radius: 12px; }
+    .heat-spark { display: none; }
+}
+
+.bubble {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 기포 터짐 애니메이션 */
+.bubble.burst {
+    animation: bubbleBurst 0.25s ease forwards;
+}
+
+@keyframes bubbleBurst {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* --- Calculator.css (Final Version) --- */
+
+/* 전체 배경: 양 옆 잘림 문제 해결을 위해 overflow 제거 및 전체 화면 채우기 */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #2b0000, #0f0000 70%);
+    position: relative;
+}
+
+/* 부글부글 끓는 배경 (크기 확장) */
+.boiling-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vh;
+    transform: translate(-25vw, -25vh);
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255,80,50,0.25) 0%, rgba(0,0,0,0) 70%);
+    animation: boil 6s infinite ease-in-out alternate;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+@keyframes boil {
+    0% { transform: translate(-25vw, -25vh) scale(1); }
+    100% { transform: translate(-25vw, -25vh) scale(1.15); }
+}
+
+/* 계산기 컨테이너 */
+.calculator {
+    width: 360px;
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(30, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 30px rgba(255, 70, 50, 0.6);
+    animation: heatPulse 4s infinite ease-in-out;
+}
+
+@keyframes heatPulse {
+    0% { box-shadow: 0 0 20px rgba(255, 70, 50, 0.4); }
+    100% { box-shadow: 0 0 45px rgba(255, 90, 70, 0.7); }
+}
+
+/* 디스플레이 */
+.display {
+    background: rgba(255, 200, 180, 0.15);
+    color: #ffe6d9;
+    font-size: 2.2rem;
+    text-align: right;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 100, 70, 0.3);
+    user-select: none;
+    box-shadow: inset 0 0 15px rgba(255, 120, 80, 0.3);
+}
+
+/* 버튼 그리드 */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 16px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #d13a1a, #7a160a);
+    color: white;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 90, 60, 0.6);
+}
+
+/* 기포 팝 인터랙션 */
+.btn:active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180%;
+    height: 180%;
+    background: rgba(255, 200, 180, 0.35);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: bubblePop 0.4s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes bubblePop {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0.7; }
+    70% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}
+
+/* 연산자 버튼 */
+.btn.operator {
+    background: linear-gradient(145deg, #ff6f3c, #b32a0a);
+}
+
+/* = 버튼 강조 */
+.btn.equal {
+    background: linear-gradient(145deg, #ff8a4c, #c23a0f);
+    box-shadow: 0 0 12px rgba(255, 120, 80, 0.7);
+}
+/* 기포 터질 때 파티클 효과 */
+.bubble-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 200, 180, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: particleBurst 0.45s ease-out forwards;
+}
+
+@keyframes particleBurst {
+    0% { opacity: 1; transform: scale(1) translate(0, 0); }
+    100% { opacity: 0; transform: scale(0.4) translate(var(--tx), var(--ty)); }
+}
