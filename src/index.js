@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Calculator from "./chp12/ex3/Calculator";
+import MainContent from "./chp14/MainContent";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
     root.render(
         <React.StrictMode>
-            <Calculator/>
+            <MainContent/>
         </React.StrictMode>
     );
 }, 1000)
