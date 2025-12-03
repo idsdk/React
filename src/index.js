@@ -2,18 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainContent from "./chp14/MainContent";
-
+import App from "./ImaginationGrapper/App"
+import './ImaginationGrapper/main.css'
+import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-setInterval(()=>{
-    root.render(
-        <React.StrictMode>
-            <MainContent/>
-        </React.StrictMode>
-    );
-}, 1000)
+root.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+)
+
+// setInterval(()=>{
+//     root.render(
+//         <React.StrictMode>
+//             <App/>
+//         </React.StrictMode>
+//     );
+// }, 1000)
 
 
 // If you want to start measuring performance in your app, pass a function

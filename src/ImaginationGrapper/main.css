@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-image 0.8s ease-in-out, color 0.5s ease-in-out;
+}
+
+.dark-mode {
+    background-image: url("../ImaginationGrapper/Backgrounds/dark.png");
+    color: white;
+}
+
+.light-mode {
+    background-image: url("../ImaginationGrapper/Backgrounds/light.png");
+    color: rgb(219, 255, 15);
+}
+
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* Landing */
+.landing.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.logo {
+    font-size: 48px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.logo:hover {
+    color: #ffdd57;
+}
+.subtext {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* Universe Page */
+.subject-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.subject-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+.subject-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+
+.subject-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.4s ease;
+}
+
+
+.subject-item:hover .subject-icon {
+    transform: rotate(20deg) scale(1.2);
+}
+
+
+/* Topic Page */
+.topic-page header {
+    text-align: center;
+}
+
+
+aside {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+section {
+    margin: 20px 0;
+}
