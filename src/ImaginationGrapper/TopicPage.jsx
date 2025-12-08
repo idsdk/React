@@ -20,8 +20,8 @@ function TopicPage() {
             </aside>
 
             <section>
-                <h2 onClick={() => window.open("https://instagram.com", "_blank")}>My Interpretation</h2>
-                <p>This section contains your knowledge and relection.</p>
+                <h2 className="instagram-link" onClick={() => window.open("https://instagram.com", "_blank")}>My Interpretation</h2>
+                <p>This section contains your knowledge and reflection.</p>
             </section>
         </div>
     );

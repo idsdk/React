@@ -1,11 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import astronomyIcon from"./Icons/astronomy.jpg";
-import architectureIcon from"./Icons/architecture.jpg";
-import futurologyIcon from"./Icons/futurology.jpg";
-import physicsIcon from"./Icons/physics.jpg";
-import philosophyIcon from"./Icons/philosophy.jpg";
+import astronomyIcon from "./Icons/astronomy.jpg";
+import architectureIcon from "./Icons/architecture.jpg";
+import futurologyIcon from "./Icons/futurology.jpg";
+import physicsIcon from "./Icons/physics.jpg";
+import philosophyIcon from "./Icons/philosophy.jpg";
 
 const subjects = [
     {id: "astronomy", name: "Astronomy", icon:astronomyIcon},
